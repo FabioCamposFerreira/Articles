@@ -1,0 +1,9 @@
+# Files
+*.pyc
+
+
+#Folders
+node_modules/
+__pycache__/
+
+#exceptions
