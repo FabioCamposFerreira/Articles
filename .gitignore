@@ -1,5 +1,6 @@
 # Files
 *.pyc
+<<<<<<< HEAD
 *.zip
 *.log
 *.aux
@@ -13,5 +14,12 @@
 node_modules/
 __pycache__/
 **/beeware-venv
+=======
+
+
+#Folders
+node_modules/
+__pycache__/
+>>>>>>> c7a606862c6b7a1c106c083c72ea1c77251d8299
 
 #exceptions
