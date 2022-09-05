@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Close</title>
+		<style type="text/css">
+			#info {
+				background-color: #F0DB4f;
+				height: 300px;
+				width: 300px;
+		}
+		</style>
+		<script>
+			function ocultarConteudo(){
+				document.getElementById('info').style.visibility='hidden';
+			}
+			function mostrarConteudo(){
+				document.getElementById('info').style.visibility='visible';
+			}			
+		</script>
+	</head>
+	<body>
+		<p>
+			<input name="ocultar" type="button" onclick="ocultarConteudo()" value="Ocultar Imagem">
+			<input name="mostrar" type="button" onclick="mostrarConteudo()" value="Mostrar Imagem">
+		</p>
+		<div id="info"> <img src="file:///C:/Users/Usuario/Desktop/Horários.png" alt="JS" width="200" height="200"> </div>
+		<button onClick="Clear();">Limpar conteúdo deste documento!
+		</button>
+	</body
+</html>

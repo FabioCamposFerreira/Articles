@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="UFT-8">
+	<title>Tabela de Cores</title>
+	<script>
+		function geraTabela() {
+			document.write('<table border=1 width="100%">');
+			var valores = "00336699CCFF";
+			var rgb;
+			for (r = 0; r < 6; r++) {
+				for (g = 0; g < 6; g++) {
+					if (g % 2 == 0) document.write("<tr>");
+					for (b = 0; b < 6; b++) {
+						cor = valores.substr(2 * r, 2) + valores.substr(2 * g, 2) + valores.substr(2 * b, 2);
+						document.write('<td align="center" bgcolor="#' + cor + '">');
+						if (g < 3) document.write('<font size="-2" color="white">');
+						else document.write('<font size="-2" color=black>');
+						document.write(cor + '</font></tr>');
+					}
+					if (g % 2 == 1) document.write('</tr>');
+				}
+			}
+			document.write('</table>');
+		}
+	</script>
+</head>
+
+<body onload="geraTabela()">
+</body>
+
+</html>

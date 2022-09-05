@@ -1,0 +1,96 @@
+% !TeX spellcheck = pt_BR
+
+\chapter{Excel} 
+Cedula: são localizadas encontro das linhas e das colunas
+
+Intervalo: são das cédulas iniciais ate a final
+
+Colar especial: escolhe colar tudo, só o texto, formulas, formatos (igual ao pincel)
+
+O excel pode ser usado como uma calculadora
+
+Em formaula na descrição [] significa opcional
+
+Pode somar usando =soma(), 
+
+Para deixar todas as linhas com o mesmo tamanho, selecione todas, e clique e arraste uma para dar o mesmo espacamento entre elas
+
+=cont	.num conta qualtos numeros
+
+=cont	.valores conta tudo que diferente de vazio
+
+=cont	.se(c10:c:20;0) conta quantos zeros
+
+=cont	.se(c10:c:20;>"0") conta quantos são maiores que zero
+
+maxino() retornar maior valor
+
+maior() pede o intervalo e qual o o maior valor que quer (2 maior, 3 maior ,etc)
+	
+Pode tirar a linha de grade 
+
+Evite mescar. Use formatar celuda e selecione centralizar seleção
+
+
+%formação condicional (não vai falar muito)
+
+Use \$ para travar o interva-lo e poder arratas e copiar a formula (atalho F4)
+
+=procv() procura o valor e retorna o conteúdo de uma coluna da mesma linha
+
+
+Data>AutoFilter
+
+Como extrair o dia de uma data
+=DAY(A1)
+
+Como extrair o mês de uma data?
+=MONTH(A1)
+
+Como seleciona todas as cédulas de uma linha
+shift+seta
+
+Como ??
+vlookup(Seach criterio;array;Index; Sort order)
+
+Como contar celular iguais a um criterio
+countif(range;criteria)
+Para usar dois criterios use countifs
+
+Como criar um intervalo de umca coluna toda
+d:d
+
+Como somar quando existe condição
+sumif(range;criteria; sum range)
+Para usar dois criterios use sumifs
+
+Como fazer media quando existe condição
+averageif(range;criteria; sum range)
+Para usar dois criterios use averageifs
+
+
+Como remover cedulas com elementos duplicados
+Data -> More Filters -> Advanced Filters . On the Advanced Filter window, select the range for removing the duplicates
+
+Como esconder as linhas de grade
+Click on Tools > Options . Go to LibreOffice Calc > View . In the "Visual aids section", next to "Grid lines" , select "Hide "
+
+
+Como criar uma lista selecional
+Data>Data>Validation>Cell Range
+
+Como criar uma tabela dinamica
+seleciona toda a tabela:insert>pivot table
+
+Como estrais os caracteres a esquerda de uma celula
+left(A1;2)
+
+Como achar a posiçlão de um caracter
+-localizar()
+
+Como extraixar um texto apartir de uma posição
+ext.text()
+
+
+\chapter{Referências}
+https://www.youtube.com/watch?v=-Obh4dMeLak&ab_channel=MotimEduca%C3%A7%C3%A3o

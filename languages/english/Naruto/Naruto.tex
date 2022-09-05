@@ -1,0 +1,321 @@
+% !TeX spellcheck = en_GB
+\documentclass[
+% -- op��es da classe memoir --
+10pt,				% tamanho da fonte
+openright,			% cap�tulos come�am em p�g �mpar (insere p�gina vazia caso preciso)
+oneside,			% para impress�o em recto e verso. Oposto a oneside
+a5paper,			% tamanho do papel.
+% -- op��es da classe abntex2 --
+%chapter=TITLE,		% t�tulos de cap�tulos convertidos em letras mai�sculas
+%section=TITLE,		% t�tulos de se��es convertidos em letras mai�sculas
+%subsection=TITLE,	% t�tulos de subse��es convertidos em letras mai�sculas
+%subsubsection=TITLE,% t�tulos de subsubse��es convertidos em letras mai�sculas
+% -- op��es do pacote babel --
+brazil,				% o �ltimo idioma � o principal do documento
+french,				% idioma adicional para hifeniza��o
+english,			% idioma adicional para hifeniza��o
+sumario=tradicional
+]{abntex2}
+
+\usepackage{mathtools}
+\usepackage{amsfonts}
+\usepackage{mathrsfs} % para mathscr
+
+\usepackage [autostyle, english = american]{csquotes}
+\MakeOuterQuote{"}
+\usepackage{ifxetex}
+\ifxetex
+% % se for utilizar as fontes do sistema: **escolha sua fonte**
+% comandos de fontes
+\usepackage{mathspec}
+\setmathsfont(Digits,Latin,Greek){Minion Pro}
+\setmathrm{Minion Pro}
+\setmainfont[Numbers=OldStyle]{Minion Pro} %fonte principal (serifada)
+\setsansfont[Scale=0.9]{Myriad Pro} %fonte sem serifas
+\setmonofont[Scale=MatchLowercase]{Consolas} % fonte monoespa�ada
+
+\usepackage{polyglossia} %always load polyblossia after fonts for digits in math mode
+\setmainlanguage{english}
+\setotherlanguages{french,brazil,spanish,german,italian}
+
+\else
+% % se for utilizar pdflatex
+\usepackage[utf8]{inputenc}
+%\usepackage{newtxmath}
+%\usepackage{Alegreya}
+%\usepackage{AlegreyaSans}
+%\usepackage[lf]{FiraMono}
+\usepackage{csquotes}
+%\usepackage[italic]{mathastext}
+%
+%% Observa��o: o pacote polyglossia pode apresentar erro ao ser utilizado com ifxetex + babel.
+%% Se isso acontecer, atualize o pacote para a vers�o mais recente ou utilize somente uma das sequ�ncias (pdflatex ou xelatex), comentando ou apagando a outra.
+
+\usepackage{microtype} 				% para melhorias de justifica��o
+\usepackage[dvipsnames]{xcolor} 		% para cores
+\usepackage{graphicx} 			% para imagens
+\usepackage{booktabs,tabularx,rotating}	% para tabelas
+\usepackage{mdframed} 				% para caixas de texto como na CIP do verso do t�tulo
+\usepackage{multicol}				% tabelas com colunas mescladas
+\usepackage{lettrine}				% letras capitulares
+\usepackage{xspace} 				% para nao precisar de espa�os com {} depois de comandos
+%% como \LaTeX e abrevia��es criadas pelo usu�rio
+\usepackage{lipsum} 				% para texto de preenchimento de exemplo
+\usepackage{leading}				% espa�amento entrelinhas (leading)
+\leading{13pt}
+%
+%% ---
+%% Pacotes de cita��es
+%% ---
+\usepackage[brazilian,hyperpageref]{backref}	 % Paginas com as cita��es na bibl
+\usepackage[alf]{abntex2cite}	% Cita��es padr�o ABNT
+%
+%% ---
+%% Configura��es do pacote backref
+%% Usado sem a op��o hyperpageref de backref
+\renewcommand{\backrefpagesname}{Cited on the page(s):~}
+%% Texto padr�o antes do n�mero das p�ginas
+\renewcommand{\backref}{}
+%% Define os textos da cita��o
+%\renewcommand*{\backrefalt}[4]{
+%	\ifcase #1 %
+%	No citation in the text.%
+%	\or
+%	{Cited on the page #2.%
+%	\else
+%	Cited #1 times on pages #2.%
+%	\fi}%
+%% ---
+
+% ---
+% Informa��es do documento
+% ---
+\titulo{Naruto}
+\autor{Masashi Kishimoto}
+\data{1999}
+\preambulo{Naruto (???) is a serie of manga written and ilustred by Masashi Kishimoto, which tells the history of Naruto Uzumaki, a young ninja than constantly seeks recognition and dreams of becoming Hokage, the leading ninja in his village.}
+\local{Tokyo}
+\instituicao{SHONEN JUMP.\\ \abnTeX\ v-1.9.7}
+
+% alterando o aspecto da cor azul
+\definecolor{blue}{RGB}{41,5,195}
+
+% informa��es do PDF
+\makeatletter
+\hypersetup{
+	%pagebackref=true,
+	pdftitle={\@title},
+	pdfauthor={\@author},
+	pdfsubject={\imprimirpreambulo},
+	pdfcreator={LaTeX with abnTeX2},
+	pdfkeywords={abnt}{latex}{abntex}{abntex2}{livro},
+	colorlinks=true,       		% false: boxed links; true: colored links
+	linkcolor=blue,          	% color of internal links
+	citecolor=blue,        		% color of links to bibliography
+	filecolor=magenta,      		% color of file links
+	urlcolor=blue,
+	bookmarksdepth=4
+}
+\makeatother
+% ---
+
+% ---
+% Estilo de cap�tulos
+%
+% \chapterstyle{pedersen}
+% \chapterstyle{lyhne}
+%\chapterstyle{madsen}
+\chapterstyle{veelo}
+%
+% Veja outros estilos em:
+% https://www.ctan.org/tex-archive/info/MemoirChapStyles
+% ---
+
+%\title{\textbf{ Naruto}}
+%\author{Masashi Kishimoto}
+%\date{}
+
+\begin{document}
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=1\textwidth]{imgs/img_cap_volume_one.jpg}
+\end{figure}
+
+\maketitle
+\tableofcontents
+\part{Volume 01}
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=\textwidth]{imgs/img_cap_volume_one_chapter_zero.jpg}
+\end{figure}
+
+\chapter{Uzumaki Naruto}
+
+Once appeared a nine tails demon fox. The swinging of one of yours powerful tails should to destroy hills and cause tsunamis. To fight the demon, the people called Shinobis. One brave Shinobi was capable of to seal the demon, but he lost the life. This Shinobi was known as Hokage fourth.\\
+
+\noindent A guard -- \enquote{Hokage-sama!!!}\\
+A guard -- "Hokage-sama!!!"\\
+Third Hokage -- \enquote{Is what? Is Naruto causing problems again?}. \\
+The same guard -- \enquote{Yes!! Naruto is profaning monument of the Hokage. And this time, with paint!!.}\\
+The peoples -- \enquote{Hey! Stop of causing problems!!!, Stop Doing this!! You go pay for that!! Look all that...}\\
+The peoples on this place continued  condemning the action of the children.\\
+Naruto -- \enquote{Be quiet, idiots!!!}, he shouted and continued, \enquote{You no would be able  to do something like this. But I yes!!! I am incredible!!!}\\
+Hokage -- \enquote{Damn... What this stupid is making?}\\
+\enquote{HUH?}\\
+Iruka -- \enquote{Third Hokage-sama. Sorry for this.}\\
+Hokage -- \enquote{OH, Iruka.}\\
+Iruka -- \enquote{What you is doing during  the schedule of class?!!Get down here your moron!!!}\\
+Naruto -- \enquote{Damn... Is the Iruka-sensei}\\
+
+Later, in the school shinobi, Naruto is tying and Iruka starts lesson.\\
+Iruka -- \enquote{Tomorrow is the graduation exam in school of ninja. You fault in the last ones twice.}\\
+\enquote{Not is hour of you are causing problems, stupid.}\\
+Naruto -- \enquote{Yes, yes.}\\
+Iruka -- \enquote{It is hour of review of the \enquote{transformation's technique}, everybody in queue!!!}\\
+Class -- \enquote{WHAT???}\\
+Iruka -- \enquote{Transform perfectly in me.}, so  each student went ahead and permed the transformation technique.\\
+\enquote{...}\\
+\enquote{Ok, good.}\\
+\enquote{Next one, Uzumaki Naruto!}\\
+A student said to Naruto -- \enquote{All this is your blame.}\\
+Naruto -- \enquote{As if I mattered.}\\
+\enquote{Damn...}, Naruto not could get more nervous!\\
+\enquote{Naruto in thought -- Ok, go there!!!}\\
+Naruto screamed -- \enquote{To transform!!!} -- Naruto became in a nude young woman and Iruka was very embarrassed.\\
+\enquote{GYA HAHA HAHA!!!}\\
+\enquote{I call Sexy's jutso.}\\
+Iruka -- Your idiot!!!\\
+\enquote{Don't invent stupid blows.}\\
+
+Naruto is obliged to clean monument of the Hokage that he has soiled.\\
+Naruto -- \enquote{Oh, my God! Damn it!}\\
+Iruka -- \enquote{I'm not going to let you go until to clean all.}\\
+Naruto -- \enquote{Like I care... There will isn't someone waiting for me some...}\\
+\enquote{Bah!}, Iruka moved himself.\\
+Iruka -- \enquote{Naruto...}\\
+Naruto -- \enquote{What is now?}\\
+Iruka -- \enquote{Well...}\\
+\enquote{If you clean it all right...}\\
+\enquote{I'll buy a ramen  for you tonight.}\\
+Naruto -- \enquote{OK!!! I'll going to work ready hard!!!}\\
+Iruka -- \enquote{Naruto.}\\
+Naruto -- \enquote{Huh?}\\
+Iruka -- \enquote{Why you do that with monument of the Hokage? Don't you know who are the Hokage?}\\
+Naruto -- \enquote{Of course I know!!!}\\
+\enquote{Basically, those received the Hokage title are shinobs strongest of village, right?}\\
+\enquote{And among them is The Four. A hero that saved the village a fox demon.}\\
+Iruka -- \enquote{So, why?}\\
+Naruto -- \enquote{A day I going to win the Hokage title.}\\
+\enquote{And then, I'll outdo all the others Hokages!!}\\
+\enquote{And then, and then!!! I?ll do everybody in the village recognize my strength!!!}\\
+\enquote{Sensei... I have a request...}\\
+Iruka -- \enquote{What?You want another ramen?}\\
+Naruto -- \enquote{No...I want that you lend me your Leaf protector!!!}\\
+Iruka -- \enquote{Oh! This? No, no, this is for after that you graduate.}\\
+\enquote{This is a symbol that you will have when time come . Maybe you?ll win the your tomorrow.}\\
+Naruto -- \enquote{Annoying!!!}\\
+Iruka -- \enquote{Haha, so you could remove your glasses.}\\
+Naruto -- \enquote{I want more!!}\\
+Iruka -- Huh?!!\\
+
+The next day in class, Naruto is discouraged...\\
+Iruka -- \enquote{Now for the graduation exam, you'll do the 'Bunshin no Jutsu'\footnote{Skill to clone}}\\
+Naruto to thinking -- \enquote{Damn!!!That not might be?!! That is my worst technique!!!}\\
+\enquote{But I goint to archive!!!}\\
+Class - \enquote{What is this!!}\\
+Naruto -- \enquote{Clone!!!}\\
+Naruto make a ridiculous clone that can't stand...\\
+Iruka -- \enquote{...Failed!!!}\\
+Mizuki, other professor with was helping Iruka in the exam -- \enquote{This is his third time, and he made a clone...}\\
+\enquote{More that this, I no think he achieves...}\\
+\enquote{We could let him pass...}\\
+Iruka -- \enquote{No, Mizuki-sensei...}\\
+\enquote{All the others students made three clones.}\\
+\enquote{But Naruto only made one, and horrible quality.}\\
+\enquote{I can't let him go...}\\
+
+After the exam, outside of school, there were many parents waiting for their children to celebrate their success in the exam. But Naruto was alone, sitting on swing, away from other people, away from celebration, his face was sad and his head bowed, but he could see other people's happiness.\\
+A father saying to his son --  \enquote{Good job!!! That's my boy!!!}\\
+Another father -- \enquote{Now, you're a men!!!}\\
+A mother -- \enquote{I am proud of you. I will make your favorite dish  for dinner.}\\
+Any father -- \enquote{Hey, that boy...}\\
+Your son -- \enquote{Yes, that is \enquote{the} lad. And only he failed.}\\
+A mother -- \enquote{Well, that's a good thing.}\\
+Another mother continued -- \enquote{He cannot become a shinobi.}\\
+\enquote{Because he is...}\\
+Another interrupted -- \enquote{Hey, we can't talk about it.}\\
+
+After this situation, when looking at the swing, it was not possible to find Naruto anymore. Hokague and Iruka were in the middle of the celebration, but managed to see Naruto's sadness.\\
+The Hokague -- \enquote{Iruka, i need to talk to you.}\\
+Iruka -- \enquote{Yes.}\\
+
+Mizuki also noticed Naruto's condition, but unlike the others, he went after the boy.\\
+Mizuki -- \enquote{Naruto..}\\
+Naruto -- \enquote{Mizuke-sensei!}\\
+
+And they went to the edge of a balcony,  in a house that was on the to of a building and started talking.\\
+Mizuki -- \enquote{Iruka sensei is a serious person. He suffered the death of his parents  as young and had to take care of himself later.}\\
+Naruto -- \enquote{But why does he just brother me?}\\
+
+%c1-p17
+Mizuki -- \enquote{He probably identifies himself with you.}\\
+Mizuki -- \enquote{He probably believes that you'll be be really strong someday.}\\
+Mizuki -- \enquote{Try understands the Iruka's feelings.}\\
+Mizuki -- \enquote{Since you too don't have parents.}\\
+Naruto -- \enquote{....}\\
+Naruto -- \enquote{...But, I wanted to have graduated.}\\
+Muniki  fixed a more serious  look in the Naruto.\\
+Mizuki -- \enquote{Well... So....}\\
+Naruto -- \enquote{Huh?}\\
+Mizuki -- \enquote{I'll tell you a special secret.}\\\\
+
+%c1-p18
+The moon  was already in the middle the dark sky, while Naruto outside a house, on the edge of the window on the top floor. Naruto enter silently the house, but... \\
+The Hokague -- \enquote{What are you doing in my house at this hour?}\\
+Naruto -- \enquote{Sexy No Jutsu!!!}\\
+The Hokague falls fainted and bleeding through the nose. Naruto take advantage to scape. In a room with various scrolls, Naruto search something...\\
+Naruto -- \enquote{I found it!!}\\
+Somebody, hidden of the outside house, looks like observe Naruto...
+
+%c1-p19
+Mizuki!?\\
+Naruto can get away of the Hokague's house para the middle jungle te read the scroll.\\
+Naruto -- \enquote{Let me  see... The first technique is "Kage Bushin" Shadow Clone??}\\
+Naruto -- \enquote{What hell!!! Why I have that start exactly with one that I'm bad? }\\\\
+Meanwhile, Iruka recalls in your bed what the Hokage told.
+The Hokague -- \enquote{Iruka.}\\
+Iruka -- \enquote{Yes, sr. Hokage?}\\
+The Hokague -- \enquote{I know 	like you feel, but...}\\
+The Hokague -- \enquote{He is very like with you.}\\
+Maybe Iruka could haven acted otherwise.\\
+
+%c1-p20
+He remembers of the attack of the fox of nine tails. Various ninjas are fighting against the fox.\\
+One ninja -- \enquote{We have that hold him until The Fourth arrive!!} \\
+Iruka -- \enquote{Let me go!!!}\\
+Iruka -- \enquote{My mom and dad are fighting!!!}\\
+
+%c1-p21
+Suddenly  somebody calls Iruka in your house...\\
+Toc! Toc!\\
+Iruka -- \enquote{What was?}\\
+Mizuki --\enquote{We have that go as far as  Hokage-sama!}\\
+\enquote{Naruto picked up the parchment of prohibited seals!}\\
+Iruka -- \enquote{!!}\\
+Arrived in the place, various ninjas are around of The Hokage...\\
+The Hokague -- \enquote{Yes, that powerful parchment sealed by previous Hokages...}\\
+ \enquote{If it's used of certain ways, can to causer a big problem...}\\
+ 
+ %c1-p22
+\enquote{It's now half a day since that the parchment was stolen.}\\
+\enquote{We have that find Naruto now!!}\\
+All Ninjas -- \enquote{Yes!!}\\
+Iruka start look for  Naruto in the villa.\\
+Iruja thinking -- \enquote{...! I should look for the forest...}\\
+Mizuki thinking -- \enquote{I'll spread the information a little more, then I get rid  of Naruto.}\\
+\enquote{I will do with that seem that Naruto escape with the parchment.}\\
+ 
+ %c1-p23
+\end{document}

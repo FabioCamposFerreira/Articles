@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+	<head>
+			<meta charset="UFT-8">
+			<title>Evento onblur</title>
+	</head>
+	<body>
+		<script>
+			function aviso(){
+				if(form1.nome.value == ""){
+					alert("Campo Obrigatório");
+				}
+			}
+		</script>
+		<pre>
+			<form name="form1">
+				Digite seu nome:
+				<input type="text" name="name" onblur="aviso()">
+			</form>
+		</pre>
+	</body>
+</html>

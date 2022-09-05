@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Object Window/Frame</title>
+		<script>
+			function outraurl(){
+				var i, args=outraurl.arguments; document.retorno = false;
+				for(i=0;i<args.lenght-1;i+=2)
+				eval(args[i]+".location='"+args[i+l]+"'");
+			}
+		</script>
+	</head>
+	<body>
+		<input name="pagina" type="button"
+		onClick="outraurl('parent','http://www.adobe.com');return
+		document.retorno" value="Adobe">
+	</body>
+</html>

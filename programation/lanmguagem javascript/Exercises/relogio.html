@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Relógio</title>
+	<script>function DataHora() { var data = new Date(); tempo.innerHTML = data; setTimeout("DataHora() ", 1000); }</script>
+</head>
+
+<body onLoad="DataHora()""><span id="tempo"></span></body>
+
+</html>

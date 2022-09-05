@@ -1,0 +1,218 @@
+% !TeX spellcheck = pt_BR
+% Modelo Latex do relatório do Prof. Júlio
+
+\documentclass[
+	            12pt,          % Tamanho da fonte principal
+                oneside,       % "oneside" (imprime no verso da folha) ou "twoside" (não imprime no verso da folha)
+                a4paper,       % Define a folha como A4
+                chapter=TITLE, % Títulos de capítulos convertidos em letras maiúsculas
+                english,	   % Idioma adicional para hifenização
+                brazil		   % O último idioma é o principal do documento
+              ]{abntex2}       % Usa a classe Abntex2
+
+% ------------------------------------------------------------------------------------------------------------------------------
+% Importando Pacotes
+\usepackage{helvet}                          % Seleção da fonte Helvet
+\usepackage[T1]{fontenc}		             % Seleção de códigos de fonte.
+\usepackage[utf8]{inputenc}		             % Codificação do documento (conversão automática dos acentos)
+\usepackage{hyperref}                        % Usado para modificar metadados do pdf
+\usepackage{graphicx}                        % Inclusão de gráficos e gerenciar imagens
+\usepackage{microtype} 			             % Para melhorias de justificação
+\usepackage{mathtools}                       % Torna equações bonitas
+\usepackage{listings}                        % Inserir algoritmos de programação
+\usepackage{listingsutf8}                    % Inserir algoritmos de programação apresentando acentos
+\usepackage{amsfonts}                        % Conjunto de fontes para uso em matemática, incluindo: símbolos matemáticos extras
+\usepackage{color}				             % Controle das cores
+%\usepackage[brazilian,hyperpageref]{backref} % Páginas com as citações na bibliográficas
+\usepackage[num]{abntex2cite}	             % Estilo de citações
+\usepackage{indentfirst}                     % Identifica o primeiro parágrafo de cada seção.
+\usepackage{mathrsfs}                        % Permite um novo estilo de letras
+\usepackage{longtable}                       % Permite o uso de tabelas longas
+%\usepackage{mathfont}                       % ??
+\usepackage[style=abnt]{biblatex}
+\addbibresource{tex_latexReferencias.bib}
+% ------------------------------------------------------------------------------------------------------------------------------
+
+% --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+% Informações de dados para CAPA e FOLHA DE ROSTO
+\titulo{Resumo Módulo 5}
+\newcommand{\subtitulo}{Sistemas de Televisão} % Cria um subtitulo
+\newcommand{\imprimirSubtitulo}{\subtitulo}    % Insere subtitulo na capa
+\autor{Fábio Campos Ferreira}
+\local{Patos de Minas}
+\orientador{Jeovane Vicente de Sousa}
+\data{2021}
+\instituicao{ UNIVERSIDADE FEDERAL DE UBERLÂNDIA  \par  Engenharia Eletrônica e de Telecomunicações  \par }
+\preambulo{Relatório Parcial apresentado como um dos requisitos de avaliação na disciplina Instalações Elétricas do Curso de Engenharia de Eletrônica e Telecomunicações da Universidade Federal de Uberlândia.}
+% --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+% ------------------------------------------------------------------------------------------------------------------------------------------------------------------
+% Definições iniciais
+\renewcommand{\familydefault}{\sfdefault}                                        % Altera a fonte principal para Helvet ("Arial")
+\linespread{1.43}                                                                % Para espaçamento entre linhas Word 1.5
+\setlength{\parindent}{1.5cm} % ??
+\citebrackets[]                                                                  % Referências entre colchetes
+\renewcommand{\rmdefault}{\sfdefault}                                            % ??
+\renewcommand\ABNTEXchapterfontsize\Large                                        % Altera a fonte dos capítulos para 17 pt
+\renewcommand{\ABNTEXchapterfont}{\sffamily\bfseries}                            % Altera a fonte dos capítulos para negrito
+\renewcommand\ABNTEXsectionfontsize\large                                        % Altera a fonte das seções para 14 pt
+\renewcommand{\ABNTEXsectionfont}{\sffamily\bfseries}                            % Altera a fonte das seções para negrito
+\renewcommand\ABNTEXsubsectionfontsize\large                                     % Altera a fonte das subseções para 14 pt
+\renewcommand{\ABNTEXsubsectionfont}{\sffamily\bfseries}                         % Altera a fonte das subseções para negrito
+\definecolor{blue}{RGB}{41,5,195}                                                % Altera o aspecto da cor azul
+\definecolor{codegreen}{rgb}{0,0.6,0}                                            % Cor para os algoritmos
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}                                         % Cor para os algoritmos
+\definecolor{codepurple}{rgb}{0.58,0,0.82}                                       % Cor para os algoritmos
+\definecolor{backcolour}{rgb}{0.99,0.99,0.99}                                    % Cor para os algoritmos
+\renewcommand{\lstlistingname}{Algoritmo}                                        % Altera o nome no referenciação de algoritmos
+\renewcommand{\lstlistlistingname}{Lista de algoritmos}                          % Altera o nome no referenciação de algoritmos
+\lstset{numberbychapter=false}                                                   % Corrige a numeração dos algoritmos"
+\newlistof{lstlistoflistings}{lol}{\lstlistlistingname}                          % Para remover “lstlistoflistings” do índice (toc)
+\newcommand\ddfrac[2]{\displaystyle \frac{\displaystyle #1 }{ \displaystyle #2}} % Criando comando "\ddfrac{}{}" para frações matemáticas sempre com "\displaystyle"
+%\mathfont{\sfdefault}                                                            % ??
+\renewcommand{\backrefpagesname}{Citado na(s) página(s):~}                       % Configurações do pacote backref
+\renewcommand{\backref}{}                                                        % Texto padrão antes do número das páginas
+%
+\renewcommand*{\backrefalt}[4]{                                                  % Define os textos da citação
+	\ifcase #1 %
+	Nenhuma citação no texto.%
+	\or
+	Citado na página #2.%
+	\else
+	Citado #1 vezes nas páginas #2.%
+	\fi}%
+%
+\hypersetup{                               % Informações do PDF
+		pdftitle={\@title},
+		pdfauthor={Fábio Campos Ferreira},
+		pdfkeywords={latex},
+		pdfcreator={LaTeX},
+		colorlinks=true,
+		linkcolor=black,
+		citecolor=black,
+		urlcolor=black
+	}
+\makeatletter
+\setlength{\@fptop}{5pt} % Posiciona figuras e tabelas no topo da página quando adicionadas sozinhas
+\makeatother
+%
+\makeatletter
+\def\ScaleIfNeeded{                 % Criando comando "\ScaIfNeeded" para ajuste automático da escala das imagens
+	\ifdim\Gin@nat@width>\linewidth
+	\linewidth
+	\else
+	\Gin@nat@width
+	\fi
+}
+\makeatother
+\allowdisplaybreaks[1]
+%
+% ------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+% ----------------------------------------------------------------------------------------------------------------------------------------------------------
+% Design da capa
+\renewcommand{\imprimircapa}{%
+	\begin{capa}%
+		\center
+		\includegraphics[width=1.5cm]{tex_imFeelt.png}\par
+		Universidade Federal de Uberlândia\par	Faculdade de Engenharia Elétrica - Campus Patos de Minas\par Engenharia Eletrônica e de Telecomunicações\par
+		\vfill
+		{\ABNTEXchapterfont\Large\MakeUppercase\imprimirautor}
+		\vfill
+		\begin{center}
+			\ABNTEXchapterfont\large\MakeUppercase\imprimirtitulo\par \normalsize\ \par
+			\ABNTEXchapterfont\normalsize\MakeUppercase\imprimirSubtitulo
+		\end{center}
+		\vfill		\vfill
+		\normalsize\imprimirlocal\par
+		\normalsize\imprimirdata
+
+	\end{capa}
+}
+% ----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+% -------------------------------------------------------------------------
+% Design da folha de rosto
+\makeatletter
+\renewcommand{\folhaderostocontent}{
+	\begin{center}
+\ \vfill
+		{\ABNTEXchapterfont\Large\MakeUppercase\imprimirautor}
+		\vfill
+		\begin{center}
+\ABNTEXchapterfont\large\MakeUppercase\imprimirtitulo\par \normalsize\ \par
+\ABNTEXchapterfont\normalsize\MakeUppercase\imprimirSubtitulo
+		\end{center}
+		\vfill
+		\abntex@ifnotempty{\imprimirpreambulo}{%
+			\hspace{.45\textwidth}
+			\begin{minipage}{.5\textwidth}
+				\SingleSpacing
+				\normalsize\imprimirpreambulo\par\ \par\ \par
+		{\normalsize\imprimirorientadorRotulo~\imprimirorientador\par}
+			\end{minipage}%
+		}%
+
+		\vfill		\vfill
+\large\imprimirlocal\par
+\large\imprimirdata
+	\end{center}
+}
+\makeatother
+% -------------------------------------------------------------------------
+
+\begin{document}
+
+% --------------------------------------------------------------------------------------------------------
+\selectlanguage{brazil} % Seleciona o idioma do documento (conforme pacotes do babel)
+\pretextual                           % Inicia os elementos pré-textuais
+\frenchspacing                        % Retira espaço extra obsoleto entre as frases.
+\imprimircapa                         % Imprime a capa
+%\imprimirfolhaderosto*                % Imprime Folha de rosto
+
+%\pdfbookmark[0]{\listfigurename}{lof} % ??
+%\listoffigures*                       % Insere lista de ilustrações
+%\cleardoublepage                      % ??
+%\pdfbookmark[0]{\listtablename}{lot}  % ??
+%\listoftables*                        % Insere lista de tabelas
+%\cleardoublepage                      % ??
+%%
+%\makeatletter
+%\renewcommand\numberline[1]{          % Corrige nomeação na lista de algoritmos
+%	\leftskip -0.7em
+%	\rightskip 1.6em
+%	\parfillskip -\rightskip
+%	\parindent 0em
+%	\@tempdima 2.0em
+%	\vspace{0em} \advance\leftskip \@tempdima \null\nobreak\hskip -\leftskip
+%	Algoritmo \normalfont #1 – }
+%\makeatother
+%\lstlistoflistings*                                                          % Inserir lista de algoritmos
+%\cleardoublepage
+%%
+%\makeatletter
+%\def\numberline#1{\hb@xt@\@tempdima{#1\hfil}} % Corrige numeração dos algoritmos
+%\makeatother
+%%
+%\pdfbookmark[0]{\contentsname}{toc} % ??
+%\tableofcontents*                   % Insere sumario
+%\cleardoublepage                    % ??
+%% --------------------------------------------------------------------------------------------------------
+
+% ----------------------------------------------------------
+% Conteúdo do pdf
+\textual           % Identifica o começo de elementos textuais
+\pagestyle{simple} % Modifica o cabeçalho para apenas número
+\include{resumo2}
+% ----------------------------------------------------------
+
+% ------------------------------------------------
+% Referências bibliográficas
+%\makeatletter
+%\renewcommand\@biblabel[1]{{\parbox{0.8cm}{[#1]}}}
+%\makeatother
+%\bibliography{tex_latexReferencias}
+\printbibliography
+% ------------------------------------------------
+
+\end{document}

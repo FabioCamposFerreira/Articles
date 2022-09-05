@@ -1,0 +1,17 @@
+# Files
+*.pyc
+*.zip
+*.log
+*.aux
+*.toc
+*.gz
+*.brf
+*.blg
+*.bbl
+*.jar
+#Folders
+node_modules/
+__pycache__/
+**/beeware-venv
+
+#exceptions

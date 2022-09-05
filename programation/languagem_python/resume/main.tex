@@ -1,0 +1,129 @@
+\documentclass[
+12pt,				  % Tamanho da fonte principal
+openright,			  % Capítulos começam em pág ímpar (insere página vazia caso preciso)
+oneside,			  % "oneside" (imprime no verso da folha) ou "twoside" (não imprime no verso da folha)
+a4paper,			  % Tamanho do papel
+chapter=TITLE,		  % Títulos de capítulos convertidos em letras maiúsculas
+%section=TITLE,		  % Títulos de seções convertidos em letras maiúsculas
+%subsection=TITLE,	  % Títulos de subseções convertidos em letras maiúsculas
+%subsubsection=TITLE, % Títulos de subsubseções convertidos em letras maiúsculas
+english,			  % Idioma adicional para hifenização
+brazil				  % O último idioma é o principal do documento
+]{abntex2}              % Usa a classe Abntex2
+
+% ------------------------------------------------------------------------------------------------------------------------------
+% Importando Pacotes
+\usepackage{helvet}                          % Seleção da fonte Helvet
+\usepackage[T1]{fontenc}		             % Seleção de códigos de fonte.
+\usepackage[utf8]{inputenc}		             % Codificação do documento (conversão automática dos acentos)
+\usepackage{hyperref}                        % Usado para modificar metadados do pdf
+\usepackage{graphicx}                        % Inclusão de gráficos e gerenciar imagens
+\usepackage{microtype} 			             % Para melhorias de justificação
+\usepackage{mathtools}                       % Torna equações bonitas
+\usepackage{listings}                        % Inserir algoritmos de programação
+\usepackage{listingsutf8}                    % Inserir algoritmos de programação apresentando acentos
+\usepackage{amsfonts}                        % Conjunto de fontes para uso em matemática, incluindo: símbolos matemáticos extras
+\usepackage{color}				             % Controle das cores
+\usepackage[brazilian,hyperpageref]{backref} % Páginas com as citações na bibliográficas
+\usepackage[num]{abntex2cite}	             % Estilo de citações
+\usepackage{indentfirst}                     % Identifica o primeiro parágrafo de cada seção.
+\usepackage{mathrsfs}                        % Permite um novo estilo de letras
+\usepackage{longtable}                       % Permite o uso de tabelas longas
+%\usepackage{mathfont}                       % ??
+% ------------------------------------------------------------------------------------------------------------------------------
+
+% --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+% Informações de dados para CAPA e FOLHA DE ROSTO
+\titulo{TÍTULO DO TRABalho}
+\newcommand{\subtitulo}{SUBTÍTulo (SE HOUVER)} % Cria um subtitulo
+\newcommand{\imprimirSubtitulo}{\subtitulo}    % Insere subtitulo na capa
+\autor{nome do autor}
+\local{Patos de Minas}
+\orientador{(Nome do Orientador)}
+\data{2020}
+\instituicao{ INSTITUIÇÃO  \par  Setor Subordinado à Instituição  \par }
+\preambulo{Relatório Parcial apresentado como um dos requisitos de avaliação na disciplina Instalações Elétricas do Curso de Engenharia de Eletrônica e Telecomunicações da Universidade Federal de Uberlândia.}
+% --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+% ------------------------------------------------------------------------------------------------------------------------------------------------------------------
+% Definições iniciais
+\renewcommand{\familydefault}{\sfdefault}                                        % Altera a fonte principal para Helvet ("Arial")
+\linespread{1.43}                                                                % Para espaçamento entre linhas Word 1.5
+\setlength{\parindent}{1.5cm} % ??
+\citebrackets[]                                                                  % Referências entre colchetes
+\renewcommand{\rmdefault}{\sfdefault}                                            % ??
+\renewcommand\ABNTEXchapterfontsize\Large                                        % Altera a fonte dos capítulos para 17 pt
+\renewcommand{\ABNTEXchapterfont}{\sffamily\bfseries}                            % Altera a fonte dos capítulos para negrito
+\renewcommand\ABNTEXsectionfontsize\large                                        % Altera a fonte das seções para 14 pt
+\renewcommand{\ABNTEXsectionfont}{\sffamily\bfseries}                            % Altera a fonte das seções para negrito
+\renewcommand\ABNTEXsubsectionfontsize\large                                     % Altera a fonte das subseções para 14 pt
+\renewcommand{\ABNTEXsubsectionfont}{\sffamily\bfseries}                         % Altera a fonte das subseções para negrito
+\definecolor{blue}{RGB}{41,5,195}                                                % Altera o aspecto da cor azul
+\definecolor{codegreen}{rgb}{0,0.6,0}                                            % Cor para os algoritmos
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}                                         % Cor para os algoritmos
+\definecolor{codepurple}{rgb}{0.58,0,0.82}                                       % Cor para os algoritmos
+\definecolor{backcolour}{rgb}{0.99,0.99,0.99}                                    % Cor para os algoritmos
+\renewcommand{\lstlistingname}{Algoritmo}                                        % Altera o nome no referenciação de algoritmos
+\renewcommand{\lstlistlistingname}{Lista de algoritmos}                          % Altera o nome no referenciação de algoritmos
+\lstset{numberbychapter=false}                                                   % Corrige a numeração dos algoritmos"
+\newlistof{lstlistoflistings}{lol}{\lstlistlistingname}                          % Para remover “lstlistoflistings” do índice (toc)
+\newcommand\ddfrac[2]{\displaystyle \frac{\displaystyle #1 }{ \displaystyle #2}} % Criando comando "\ddfrac{}{}" para frações matemáticas sempre com "\displaystyle"
+%\mathfont{\sfdefault}                                                            % ??
+\renewcommand{\backrefpagesname}{Citado na(s) página(s):~}                       % Configurações do pacote backref
+\renewcommand{\backref}{}                                                        % Texto padrão antes do número das páginas
+%
+\renewcommand*{\backrefalt}[4]{                                                  % Define os textos da citação
+	\ifcase #1 %
+	Nenhuma citação no texto.%
+	\or
+	Citado na página #2.%
+	\else
+	Citado #1 vezes nas páginas #2.%
+	\fi}%
+%
+\hypersetup{                               % Informações do PDF
+	pdftitle={\@title},
+	pdfauthor={Fábio Campos Ferreira},
+	pdfkeywords={latex},
+	pdfcreator={LaTeX},
+	colorlinks=true,
+	linkcolor=black,
+	citecolor=black,
+	urlcolor=black
+}
+\makeatletter
+\setlength{\@fptop}{5pt} % Posiciona figuras e tabelas no topo da página quando adicionadas sozinhas
+\makeatother
+%
+\makeatletter
+\def\ScaleIfNeeded{                 % Criando comando "\ScaIfNeeded" para ajuste automático da escala das imagens
+	\ifdim\Gin@nat@width>\linewidth
+	\linewidth
+	\else
+	\Gin@nat@width
+	\fi
+}
+\makeatother
+\allowdisplaybreaks[1]
+%
+% ------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+\begin{document}
+	\pretextual
+	\imprimircapa                         % Imprime a capa
+	%
+	\pdfbookmark[0]{\contentsname}{toc} % ??
+	\tableofcontents*                   % Insere sumario
+	\cleardoublepage                    % ??
+	% --------------------------------------------------------------------------------------------------------
+	\include{resume}
+	% ----------------------------------------------------
+	% Referências bibliográficas
+	\makeatletter
+	\renewcommand\@biblabel[1]{{\parbox{0.8cm}{[#1]}}} %??
+	\makeatother
+	\bibliography{referencias}         %??
+	% ----------------------------------------------------
+\end{document}
