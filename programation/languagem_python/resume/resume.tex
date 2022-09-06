@@ -23,4 +23,13 @@ O Python é uma linguagem de programação interpretada, interativa e orientada 
   print(name)
   # Fabio
   \end{lstlisting}
+  \section{Como imprir textos coloridos?}
+\begin{lstlisting}[language=python]
+	text = "Text red"
+	print("\033[91m {}\033[00m".format(text))
+	# Text red
+	text = "Text green"
+	print("\033[92m {}\033[00m".format(text))
+	# Text green
+  \end{lstlisting}
 \chapter{Exercises/Examples}
