@@ -24,3 +24,18 @@ for i in range(10):
     sleep(.1)
     progress_bar(i,9)
 ````
+
+## Cuidado com objetos mutaveis
+
+```python
+def sort_x(list_X):
+    list_X.sort()
+    return list_X
+
+
+list_1 = [2, 1, 3]
+list_2 = sort_x(list_1)
+print("list_1 = "+str(list_1))
+print("list_2 = "+str(list_2))
+```
+Refs: [LearnAndLearn.com](https://learnandlearn.com/python-programming/python-how-to/python-function-arguments-mutable-and-immutable])
