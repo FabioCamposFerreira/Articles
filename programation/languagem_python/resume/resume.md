@@ -1,17 +1,17 @@
-% !TeX spellcheck = pt_BR
+
 # Python
 
 O Python é uma linguagem de programação interpretada, interativa e orientada a objetos. Incorpora módulos, exceções, tipagem dinâmica e forte, tipo de dados  dinâmicos de alto nível e classes. Suporta multipolos paradigmas de programação como programação orientada a objetos, programação funcional e procedural. Possui uma sintaxe limpa \cite{pythonDocs}.
 
-##\chapter{How to run Python}
+## How to run Python
 
-##\section{Windows}
+## Windows
 
-##\section{Linux}
+## Linux
 
-##\chapter{Structure}
+## Structure
 
-##\chapter{Data Types}
+## Data Types
 
 ##\chapter{if}
 
