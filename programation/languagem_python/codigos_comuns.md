@@ -1,5 +1,22 @@
 # Códigos Comuns
+## Como imprir textos coloridos?
+  
+```python
+text = "Text red"
+print("\033[91m {}\033[00m".format(text))
+# Text red
+text = "Text green"
+print("\033[92m {}\033[00m".format(text))
+# Text green
+```
+## Como pegar o texto digitado pelo terminal?
 
+```python
+name = input("What is yout name? ")
+# What is yout name? Fabio
+print(name)
+# Fabio
+```
 ## Como construir uma barra de progresso para o terminal
 
 ```python
