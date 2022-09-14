@@ -41,8 +41,12 @@ for i in range(10):
     sleep(.1)
     progress_bar(i,9)
 ````
+## Como verificar se um arquivo exste
 
-
+```python
+from os.path import exists
+print(exists("image.pgn"))
+````
 
 ## 
 Refs: [LearnAndLearn.com](https://learnandlearn.com/python-programming/python-how-to/python-function-arguments-mutable-and-immutable])
