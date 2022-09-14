@@ -1,4 +1,4 @@
-# Códigos Comuns e Dicas
+# Códigos Comuns
 
 ## Como construir uma barra de progresso para o terminal
 
@@ -38,4 +38,6 @@ list_2 = sort_x(list_1)
 print("list_1 = "+str(list_1))
 print("list_2 = "+str(list_2))
 ```
+
+## 
 Refs: [LearnAndLearn.com](https://learnandlearn.com/python-programming/python-how-to/python-function-arguments-mutable-and-immutable])
