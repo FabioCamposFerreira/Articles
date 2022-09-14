@@ -46,6 +46,7 @@ for i in range(10):
 ```python
 from os.path import exists
 print(exists("image.pgn"))
+# False
 ````
 
 ## 
