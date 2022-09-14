@@ -5,9 +5,10 @@ O Python é uma linguagem de programação interpretada, interativa e orientada 
 
 ## How to run Python
 
-## Windows
+### Windows
 
-## Linux
+### Linux
+### Web
 
 ## Structure
 
