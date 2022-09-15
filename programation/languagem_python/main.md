@@ -20,6 +20,14 @@ frase = ["I","love","Python!"]
 print(" ".join(frase))
 # I love Python!
 ```
+### List
+Pegar últimos elementos
+```python
+n=2
+digits = [0,1,2,3,4,5,6,7,8,9]
+print(digits[-n:])
+# [8, 9]
+```
 ## if 
 
 ##\chapter{Switch}
