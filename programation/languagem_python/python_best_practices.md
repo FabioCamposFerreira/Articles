@@ -19,7 +19,53 @@ with open('/path/to/some/file/you/want/to/read') as file_1, \
      open('/path/to/some/file/being/written', 'w') as file_2:
     file_2.write(file_1.read())
 ```
-![Peps](https://peps.python.org/pep-0008/#maximum-line-length)
+See:![Peps](https://peps.python.org/pep-0008/#maximum-line-length)
+
+## É Mais Fácil Pedir Perdão do que Permissão
+<table>
+<tr>
+<td>
+Wrong
+</td>
+ 
+ <td>
+Correct
+ </td>
+ </tr>
+ <tr>
+<td>
+
+<tr>
+<td>
+  
+  
+```python
+import os
+file_path ="text.txt"
+if os.path.exists(file_path ):
+    with open(file_path ,"r") as file:
+        print(file)
+        # <_io.TextIOWrapper name='text.txt' mode='r' encoding='UTF-8'>
+else:
+    print("File not exists!")
+# File not exists!
+``` 
+ </td>
+ <td>
+
+```python
+file_path = "text.txt"
+try:
+    with open(file_path, "r") as file:
+        print(file)
+        # <_io.TextIOWrapper name='text.txt' mode='r' encoding='UTF-8'>
+except:
+    print("File not exists!")
+
+```
+</td>
+</tr>
+![Agus Richard](https://medium.com/nerd-for-tech/look-before-you-leap-vs-easier-to-ask-for-forgiveness-than-permission-in-programming-85d17a5f48c8)
 ## Referencias
 ![Peps](https://peps.python.org/pep-0008)
 ![Osantana](https://osantana.me/dicas-para-um-om-programa-em-python/)
