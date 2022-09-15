@@ -13,7 +13,13 @@ O Python é uma linguagem de programação interpretada, interativa e orientada 
 ## Structure
 
 ## Data Types
-
+### Strings
+Concaternando listas
+```python
+frase = ["I","love","Python!"]
+print(" ".join(frase))
+# I love Python!
+```
 ## if 
 
 ##\chapter{Switch}
