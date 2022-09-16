@@ -66,6 +66,9 @@ from os.path import exists
 print(exists("image.pgn"))
 # False
 ````
+## Usando com o Numpy
+### Como obter a uma coluna de um array (matriz)
+
 
 ## 
 Refs: [LearnAndLearn.com](https://learnandlearn.com/python-programming/python-how-to/python-function-arguments-mutable-and-immutable])
