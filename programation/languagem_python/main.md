@@ -56,6 +56,20 @@ also
 # 9
 ````
 
+Usando o indice
+````python
+numbers = [1,2,3]
+names = ["One", "Two", "Three"]
+for index,number in enumerate(numbers):
+    print(names[index]+" = "+str(number))
+# One = 1
+# Two = 2
+# Three = 3
+````
+also
+````python
+
+````
 ##\chapter{Function}
 
 ##\chapter{Class}
