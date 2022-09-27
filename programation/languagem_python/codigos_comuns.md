@@ -68,7 +68,11 @@ print(exists("image.pgn"))
 ````
 ## Usando com o Numpy
 ### Como obter a uma coluna de um array (matriz)
-
-
+## Documentando o código
+### Como usar gerar uma pagina web de sua documentação
+Use o Sphix para gerar a documentação do código
+![Sphix](https://www.youtube.com/watch?v=b4iFyrLQQh4)
+### Como gerar gráficos das chamadas de função
+![Python Call Graph ](https://pycallgraph.readthedocs.io/en/master/)
 ## 
 Refs: [LearnAndLearn.com](https://learnandlearn.com/python-programming/python-how-to/python-function-arguments-mutable-and-immutable])
