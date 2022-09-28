@@ -1,5 +1,8 @@
 # Dicas
 
+## Contenação
+Usar python .join é mais eficiente que +
+
 ## Cuidado com objetos mutaveis
 
 ```python
