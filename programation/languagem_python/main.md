@@ -70,7 +70,7 @@ also
 ````python
 
 ````
-##\chapter{Function}
+## Function
 Chame as funções depois de ter criados elas
 <table>
 <thead>
