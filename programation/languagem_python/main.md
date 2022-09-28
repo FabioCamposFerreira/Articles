@@ -71,5 +71,19 @@ also
 
 ````
 ##\chapter{Function}
-
+Chame as funções depois de ter criados elas
+<table>
+<thead>
+  <tr>
+    <th>Correct</th>
+    <th>Wrong</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td><span id = function1C>??<span></td>
+    <td><span id = function1Ws>??<span></td>
+  </tr>
+</tbody>
+</table>
 ##\chapter{Class}
