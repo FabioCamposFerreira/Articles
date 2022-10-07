@@ -9,6 +9,6 @@ print(numbers)
 # ??
 
 numbers = [1,2,3,4,5]
-numbers.append(numbers_str)
+numbers += [numbers_str]
 print(numbers)
 # ??
