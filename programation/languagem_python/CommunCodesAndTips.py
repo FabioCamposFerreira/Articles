@@ -2,6 +2,12 @@
 import math
 print(math.ceil(2/10))
 # 1
+# Exceptios
+def double(x):
+    if type(double)!= type(1):
+      raise Exception("x must be an integer!")
+double("10")
+#?
 #-------------------------------
 # Numpy
 # Get histogram of the sequency
