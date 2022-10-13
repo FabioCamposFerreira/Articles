@@ -1,5 +1,6 @@
 # Use Type Hints
 ## https://www.pythontutorial.net/python-basics/python-type-hints/
+# Organize your importations https://marketplace.visualstudio.com/items?itemName=ms-python.isort
 # Run codes more fast
 ## Low--------
 import time
