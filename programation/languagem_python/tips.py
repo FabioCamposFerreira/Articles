@@ -1,3 +1,5 @@
+# Use Type Hints
+## https://www.pythontutorial.net/python-basics/python-type-hints/
 # Run codes more fast
 ## Low--------
 import time
