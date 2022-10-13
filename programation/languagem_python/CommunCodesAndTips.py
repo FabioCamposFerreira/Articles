@@ -8,6 +8,18 @@ def double(x):
       raise Exception("x must be an integer!")
 double("10")
 #?
+#==================================================
+# Time
+## Seconds to hhh:mm:ss
+from datetime import timedelta
+
+sec = 6010
+print('Time in Seconds:', sec)
+
+td = timedelta(seconds=sec)
+print('Time in hh:mm:ss:', td)
+#??
+# https://pynative.com/python-convert-seconds-to-hhmmss/
 #-------------------------------
 # Numpy
 # Get histogram of the sequency
