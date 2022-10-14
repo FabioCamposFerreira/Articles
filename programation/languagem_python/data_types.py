@@ -12,7 +12,13 @@ numbers = [1,2,3,4,5]
 numbers += [numbers_str]
 print(numbers)
 # ??
-
+#----------------------------
+# Dictionary
+## Clone dict key only
+d = {"numbers":[1,2,3,4],"letters":['a','b',"c","d","e"]}
+d_2 = dict.fromkeys(self.methods.keys(),[])
+print(d_2)
+# ??
 #----------------------------
 # Numpy
 
