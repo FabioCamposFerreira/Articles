@@ -30,3 +30,17 @@ print(a_v)
 a_h = np.hstack(a)
 print(a_v)
 # ??
+# Set array
+np.unique(a)
+# ??
+
+# Filter and replace
+a=np.array([0,1,2,3,4])
+a[a>2] = 10
+# ??
+
+# Histrogram
+a=np.array([0,3,5,7,3])
+u, i = np.unique(a, return_inverse=True)
+print(u)
+# ??
