@@ -1,0 +1,3 @@
+O Python é uma linguagem de programação interpretada, interativa e orientada a objetos. Incorpora módulos, exceções, tipagem dinâmica e forte, tipo de dados  dinâmicos de alto nível e classes. Suporta multipolos paradigmas de programação como programação orientada a objetos, programação funcional e procedural. Possui uma sintaxe limpa.
+See:![Python documentation](https://docs.python.org/3/)
+ 
