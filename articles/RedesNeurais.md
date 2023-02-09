@@ -110,18 +110,90 @@ As tabelas abaixo mostra o processo executado para cada epoch.
 * Epoch 1
 
 
-|Interação|	$\hat{y}=\sigma(\vec{x}^T\vec{w})$  | Erro	$err=y-\hat{y}$|$\vec{w}=(w_1+err\times x_1,w_2+err\times x_2, w_3+err\times x_3)$ |
+|Entrada|	$\hat{y}=\sigma(\vec{x}^T\vec{w})$  | Erro	$err=y-\hat{y}$|$\vec{w}=(w_1+err\cdot x_1,w_2+err\cdot x_2, w_3+err\cdot x_3)$ |
 |----|----|-----|----|
 |-        |	-|	-|$\vec{w}=(0,0)$|
-|0        |	$\hat{y}=\sigma(1\times 0+0\times 0 + 0\times 0)=\sigma(0)=0$|	$err = 0-0=0$      |$\vec{w}=(0+0\times 1,0+0\times 0,0+0\times 0)=(0,0,0)$|
-|1        |	$\hat{y}=\sigma(1\times 0+0\times 0 + 1\times 0)=\sigma(0)=0$|	$err = 0-0=0$      |$\vec{w}=(0+0\times 1,0+0\times 1,0+0\times 1)=(0,0,0)$|
-|2        |	$\hat{y}=\sigma(1\times 0+1\times 0 + 0\times 0)=\sigma(0)=0$|	$err = 0-0=0$      |$\vec{w}=(0+0\times 1,0+0\times 1,0+0\times 0)=(0,0,0)$|
-|3        |	$\hat{y}=\sigma(1\times 0+1\times 0 + 1\times 0)=\sigma(0)=0$|	$err = 1-0=1$      |$\vec{w}=(0+1\times 1,0+1\times 1,0+1\times 1)=(1,1,1)$|
+|1        |	$\hat{y}=\sigma(1\times 0+0\times 0 + 0\times 0)=\sigma(0)=0$|	$err = 0-0=0$      |$\vec{w}=(0+0\times 1,0+0\times 0,0+0\times 0)=(0,0,0)$|
+|2        |	$\hat{y}=\sigma(1\times 0+0\times 0 + 1\times 0)=\sigma(0)=0$|	$err = 0-0=0$      |$\vec{w}=(0+0\times 1,0+0\times 1,0+0\times 1)=(0,0,0)$|
+|3        |	$\hat{y}=\sigma(1\times 0+1\times 0 + 0\times 0)=\sigma(0)=0$|	$err = 0-0=0$      |$\vec{w}=(0+0\times 1,0+0\times 1,0+0\times 0)=(0,0,0)$|
+|4        |	$\hat{y}=\sigma(1\times 0+1\times 0 + 1\times 0)=\sigma(0)=0$|	$err = 1-0=1$      |$\vec{w}=(0+1\times 1,0+1\times 1,0+1\times 1)=(1,1,1)$|
 
 * Epoch 2
 
-
-|||||
+|Entrada|	$\hat{y}=\sigma(\vec{x}^T\vec{w})$  | Erro	$err=y-\hat{y}$|$\vec{w}=(w_1+err\cdot x_1,w_2+err\cdot x_2, w_3+err\cdot x_3)$ |
 |----|----|-----|----|
-|0|	$\hat{y}=\sigma(1\times 1+0\times 1 + 0\times 1)=\sigma(1)=1$|	$err = 0-1=-1$|$\vec{w}=(1-1\times 1,1-1\times 0,1-1\times 0)=(0,1,1)$|
-|1| $\hat{y}=\sigma(1\times 0+0\times 1 + 1\times 1)=\sigma(2)=1$|	$err = 0-1=-1$|$\vec{w}=(0-1\times 0,1-1\times 1,1-1\times 1)=(0,-1,-1)$|
+|1|	$\hat{y}=\sigma(1\times 1+0\times 1 + 0\times 1)=\sigma(1)=1$|	$err = 0-1=-1$|$\vec{w}=(1-1\times 1,1-1\times 0,1-1\times 0)=(0,1,1)$|
+|2| $\hat{y}=\sigma(1\times 0+0\times 1 + 1\times 1)=\sigma(1)=1$|	$err = 0-1=-1$|$\vec{w}=(0-1\times 1,1-1\times 0,1-1\times 1)=(-1,1,0)$|
+|3| $\hat{y}=\sigma(1\times (-1)+1\times 1 + 0\times 0)=\sigma(0)=0$|	$err = 0-0=0$|$\vec{w}=((-1)+0\times 1,1+0\times 1,0+0\times 0)=(-1,1,0)$|
+|4| $\hat{y}=\sigma(1\times (-1)+1\times 1 + 1\times 0)=\sigma(0)=0$|	$err = 1-0=1$|$\vec{w}=((-1)+1\times 1,1+1\times 1,0+1\times 1)=(0,2,1)$|
+
+* ...
+
+* Após a Epoch 5
+    * $w_0 = -2$
+    * $w_1 = 2$
+    * $w_2 = 1$
+
+Normalizando para 1 tem-se $w_0=-1$,$w_1=1$ e $w_2=0,5$. A imagem abaixo mostra a divisão de decissão do classificador.
+
+|![Região de Decisão](imgs/região_de_decisão.gif)|
+|:--:|
+|*Região de decisão obtida*|
+
+A superficie de decisão é obtida atraves da equalção da reta $y=ax+b$ ou $y-ax-b=0$ para representar a operação $\hat{w}^T\hat{x}=0$. Se o vetor peso for $\hat{w}=(-b,-a,1)$ e o vetor entrada $\hat{x}=(1,x,y)$ pode-se repesentar a operação vetorial como uma equação de reta. (nesta equação $y$ da equação não é o resultado do perceptron)
+
+$\hat{w}^T\hat{x}=-b\times 1+(-a)\times x + 1\times y$
+
+$\hat{w}^T\hat{x}=-b+(-a)x+y$
+
+Para o exemplo (lembrando que $w_0=\theta$)
+
+$\hat{w}=(w_0,w_1,w_2)=(-b,1,-a)=(-1;1;0,5)$
+
+$\hat{x}=(x_1,x_2,x_3)=(1,x,y)=(1,x_2,x_3)$
+
+então a equação da reta é 
+
+$-b+(-a)x+y=0$
+
+$1+(0,5)x_2+x_3=0$
+
+$\dfrac{x_2}{2}+x_3=1$
+
+Segue o código do perceptron
+
+<spam id="codes/redes_neurais.py/Code full Perceptron"></spam>
+
+* **Theorema Convergencia do Perceptron**: se os dados forem linearmente separeveis, o perceptron sempre vai convergir, ou seja, contruir uma reta que consiga separar os dados.
+
+O objetivo do perceptron não é obter a magnitude do vetor $\hat{w}$, mas sim seu angulo. Assim, a escala de $\hat{w}$ não é importante, mas se for utilizado valores muito grandes, a convergencia ira demorar. Por isso, é preferivel escalar $\hat{w}$ e $\hat{x}$ para valores proximos de 0.
+
+Desvantagens do perceptron:
+
+*  Classificar linear (so pode seperar congunto usando uma reta);
+*  Classificar binario (so pode classificar entradas para duas classes);
+*  Não ira convergir se as classes não forem linearmente separaveis;
+*  Ele pode achar uma região de decisão que não é uma "otima" solução;
+
+# Algebra Linear
+
+Tensor é um vetor que tensiona a região de decisão.
+* **Escalar**: qualquer numero real, ex: $x=1$, é um tensor de rank 0;
+* **Vetor**: conjunto de $n$ numeros reais ex: $\hat{x}=(x_1,x_2,...,x_n)$, é um tensor de rank 1;
+* **Matriz**: conjunto de $m\times n$ numero reais dispostos en linhas e colunas, ex: 
+
+$**X**=\left[x_{1,1} x_{1,2} ... x_{1,n}
+x_{2,1} x_{2,2} ... x_{2,n}
+... ... ... ...
+x_{m,1} x_{m,2} ... x_{m,n}
+\right]$
+
+,é tensor de rank 2;
+
+* **Matriz design**: é nome dado a matriz contendo  $n$ caracteristicas de $m$ amostras;
+
+* **3D Tensor**: são varias matrizes, por exemplo uma imagem com tres canais de cores, é importante para usar o paralelismo de processamento e quacionamento vetorial;
+
+# Pytorch vs Numpy
+
+Os dois são bibliotecas do python usados para criação e manipulação de vetores. Mas é preferivel usar o Pytorch porque PyTorch tem suporte a GPU (permite carregar dados e modelos usando a memoria da GPU) (GPU permite o melhor parelilismo), também apresnta diferenciação automatica (faz regra da cadeia de forma automatica), ja apresenta mulitcas função de Deep Learn
