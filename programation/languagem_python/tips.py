@@ -49,3 +49,34 @@ if __name__ == '__main__':
         process.join()
         
     print('That took {} seconds'.format(time.time() - starttime))
+
+==========================================================================
+# Run loops for more fast
+def sum_1(a:int):
+    return a+1
+
+import joblib
+import time
+start_time = time.time()
+num = 10000
+with joblib.parallel_backend("loky"):
+    with joblib.Parallel() as parallel:
+        print("Doing the work ... ")
+        results = parallel(joblib.delayed(sum_1)(s) for s in range(num))
+
+# print(results)
+print(time.time()-start_time)
+start_time = time.time()
+with joblib.parallel_backend('threading'):
+    with joblib.Parallel() as parallel:
+        print("Doing the work ... ")
+        results = parallel(joblib.delayed(sum_1)(s) for s in range(num))
+print(time.time()-start_time)
+print(time.time()-start_time)
+start_time = time.time()
+with joblib.parallel_backend('multiprocessing'):
+    with joblib.Parallel() as parallel:
+        print("Doing the work ... ")
+        results = parallel(joblib.delayed(sum_1)(s) for s in range(num))
+print(time.time()-start_time)
+    
