@@ -9,13 +9,14 @@ sudo apt install i3 i3blocks
 sudo apt install slim # install login manager
 sudo apt install xorg # manages one or more graphics displays and one or more input devices (keyboard, mouse, etc.) 
 sudo apt isntall playaudio # if you computer not play sounds
-sudo apt install nautilus # if you want grafic files manager
+sudo apt install nemo # if you want grafic files manager
 sudo apt install brightnessctl # to change bright display
 ```
 
 ## Important commands
 ``` code
 brightnessctl s 500 # to seet bright display in ~50%
+neofecth # see info system
 ```
 ## Installing important apps
 
