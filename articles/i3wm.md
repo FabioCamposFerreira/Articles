@@ -24,7 +24,7 @@ neofecth # see info system
 sudo apt install firefox # to use one navigator, if not found try firefox-esr
 sudo apt install nautilus # if you want grafic files manager
  # if you want write text editor
- # if you want play videos and musics
+ sudo apt install vlc # if you want play videos and musics
  # if you want edit imagens
  # if you want see files like pdf
  # if you want make files like with world, excel, etc.
