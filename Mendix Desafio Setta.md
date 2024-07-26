@@ -1,10 +1,8 @@
 # Objetivos
 
-<input type="checkbox" id="name" name="name"/>
-
-
-AcessarUsuário do sistema
-Eu quero: Saber qual a eficiência da minha máquina de acordo com a temperatura atual e observar a tendência em um gráfico de linha
+( ) Acessar sistema como usuário
+( ) Obter a eficiência dado a temperatura atual 
+( ) Observar a tendência em um gráfico de linha
 Para: Tomar a decisão mais lucrativa de acordo com as informações apresentadas no software
 
 Resumo:
@@ -85,3 +83,11 @@ https://youtu.be/4uYI-kg-dZw
 
 user:postgres
 password: 1234
+
+# Tomada de decisão
+* Ajustar Parâmetros de Operação: Se a eficiência está abaixo do ideal, você pode precisar ajustar parâmetros operacionais como velocidade, carga, ou pressão.
+* Otimização da Temperatura: Caso a eficiência varie com a temperatura, ajuste os sistemas de resfriamento ou aquecimento para manter a temperatura dentro da faixa ideal.
+* Gerenciamento de Produção: Baseado na eficiência atual, ajuste o ritmo de produção para manter a eficiência em níveis aceitáveis e evitar sobrecarga da máquina.
+* Avaliação de Custo-Benefício: Analise se a operação atual é economicamente viável com a eficiência atual. Pode ser necessário ajustar processos para reduzir custos operacionais ou melhorar o retorno sobre o investimento.
+* Planejamento de Capacidade: Com base na eficiência, planeje a capacidade de produção e ajuste as expectativas de output.
+* Definição de Metas: Defina metas de eficiência e acompanhe o desempenho da máquina em relação a essas metas.
