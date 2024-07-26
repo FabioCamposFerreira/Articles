@@ -1,3 +1,7 @@
+# Dicionario
+Nanoflow é igual a um microflow só que acontece no lado do cliente
+
+
 # Interface grafica
 
 Videos do Leo Andrade
