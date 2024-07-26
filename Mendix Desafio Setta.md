@@ -21,5 +21,6 @@ https://www.youtube.com/watch?v=wJJmxx64J6c
 
 # PostgreSQL
 
-https://www.youtube.com/watch?v=UbX-2Xud1JA****
+https://www.youtube.com/watch?v=UbX-2Xud1JA
 
+https://youtu.be/4uYI-kg-dZw
