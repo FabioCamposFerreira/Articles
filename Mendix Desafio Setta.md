@@ -1,6 +1,6 @@
 # Objetivos
 
-<input type="text" id="name" name="name"/>
+<input type="checkbox" id="name" name="name"/>
 
 
 AcessarUsuário do sistema
